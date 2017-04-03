@@ -121,15 +121,16 @@ exec --no-startup-id compton -b
 exec --no-startup-id pamac-tray
 exec --no-startup-id volumeicon
 exec --no-startup-id dunst
+exec --no-startup-id xfce4-panel
 
 
 
 bindsym $mod+Tab		exec --no-startup-id rofi -show drun
 bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 10
 bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 10
-# bindsym XF86AudioRaiseVolume	exec amixer -q set Master 2db+ unmute
-# bindsym XF86AudioLowerVolume	exec amixer -q set Master 2db- unmute
-bindsym XF86AudioMute		exec amixer -q set Master toggle
+bindsym XF86AudioPlay		exec --no-startup-id mpc toggle
+bindsym XF86AudioNext		exec --no-startup-id mpc next
+bindsym XF86AudioPrev		exec --no-startup-id mpc prev
 
 gaps inner 10
 gaps outer 0
