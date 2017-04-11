@@ -1,0 +1,17 @@
+#!/bin/sh
+
+musica() {
+	pido=$(pidof spotify | wc -w)
+	if [ -z "$(pidof spotify)" ]; then
+		minfo="$(mpc current)"	
+	else
+		minfo="$(spotify-now -i "%artist - %title")"
+	fi
+	echo $minfo
+}
+echo $(musica)
+#while :;  do
+#	echo "$(musica)"
+#	sleep 1
+#done
+#echo xD
