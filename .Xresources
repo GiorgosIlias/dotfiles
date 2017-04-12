@@ -36,9 +36,9 @@ URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
-URxvt.font:xft:Inconsolata:size=13
+URxvt.font:xft:Dejavu Sans Mono:pixelsize=14
 !URxvt.letterSpace: -2
-*internalBorder: 15
+*internalBorder: 25
 
 
 *antialias:  true
