@@ -6,55 +6,98 @@ new_float none
 for_window [class="Pamac-manager"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [urgent=latest] focus
-for_window [class="nitrogen"] floating enable
+for_window [class="GParted"] floating enable
+for_window [class="Pamac-updater"] floating enable
+for_window [class="Xfce4-panel"] floating enable
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:roboto condensed 8
+for_window [urgent=lastest] focus 
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec urxvt
 
-# kill focused window
-bindsym $mod+c kill
+###################################
+#   AUTOSTART
+###################################
 
-# move focused window
-bindsym $mod+Left move left
-bindsym $mod+Down move down
-bindsym $mod+Up move up
-bindsym $mod+Right move right
+exec --no-startup-id nitrogen --restore
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id compton -b
+exec --no-startup-id pamac-tray
+exec --no-startup-id volumeicon
+exec --no-startup-id dunst
+exec --no-startup-id xfce4-panel
+exec --no-startup-id mpd
+# exec --no-startup-id mpv --really-quiet --no-video ~/.config/i3/xpsound.mp3
 
-# split in horizontal orientation
-bindsym $mod+h split h; exec --no-startup-id notify-send 'i3 Horizontal'
 
-# split in vertical orientation
-bindsym $mod+v split v; exec --no-startup-id notify-send 'i3 Vertical'
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle; exec --no-startup-id notify-send 'Pantalla Completa'
+###################################
+#   KEYBINDINGS
+###################################
+bindsym $mod+c			kill
+bindsym $mod+h			split h; exec --no-startup-id notify-send 'i3 Horizontal'
+bindsym $mod+v			split v; exec --no-startup-id notify-send 'i3 Vertical'
+bindsym $mod+f			fullscreen toggle; exec --no-startup-id notify-send 'Pantalla Completa'
+bindsym $mod+r			mode "resize"
+bindsym $mod+space		floating toggle
+bindsym $mod+s			sticky toggle
 
-# change container layout (stacked, tabbed, toggle split)
-#  bindsym $mod+s layout stacking
-#  bindsym $mod+w layout tabbed
-#  bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+space floating toggle
+bindsym $mod+Left		move left
+bindsym $mod+Down		move down
+bindsym $mod+Up			move up
+bindsym $mod+Right		move right
 
+
+
+bindsym $mod+Return		exec urxvt
+bindsym $mod+Tab		exec --no-startup-id rofi -show drun
+bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 10
+bindsym XF86AudioPlay		exec --no-startup-id ~/.config/i3/play.sh
+bindsym XF86AudioNext		exec --no-startup-id ~/.config/i3/next.sh
+bindsym XF86AudioPrev		exec --no-startup-id ~/.config/i3/prev.sh
+bindsym $mod+Delete		exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+F7			exec --no-startup-id mpc pause; exec --no-startup-id playerctl pause
+bindsym $mod+Print		exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
+bindsym $mod+Shift+Print	exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/'
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+
+
+###################################
+#   GAPS
+###################################
+gaps inner 10
+gaps outer 0
+
+###################################
+#   MODES
+###################################
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+
+###################################
+#   WORKSPACES
+###################################
+
+#set $ws9 9
+for_window [class="Spotify"] move to workspace 10
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -92,49 +135,4 @@ bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-#  bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-exec --no-startup-id nitrogen --restore
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id compton -b
-exec --no-startup-id pamac-tray
-exec --no-startup-id volumeicon
-exec --no-startup-id dunst
-exec --no-startup-id xfce4-panel
-exec --no-startup-id mpd
-exec --no-startup-id mpv --really-quiet --no-video ~/.config/i3/xpsound.mp3
-
-
-bindsym $mod+Tab		exec --no-startup-id rofi -show drun
-bindsym XF86MonBrightnessUp	exec --no-startup-id light -A 10
-bindsym XF86MonBrightnessDown	exec --no-startup-id light -U 10
-bindsym XF86AudioPlay		exec --no-startup-id ~/.config/i3/play.sh
-bindsym XF86AudioNext		exec --no-startup-id ~/.config/i3/next.sh
-bindsym XF86AudioPrev		exec --no-startup-id ~/.config/i3/prev.sh
-bindsym $mod+Delete		exec --no-startup-id ~/.config/i3/lock.sh
-bindsym $mod+F7			exec --no-startup-id mpc pause; exec --no-startup-id playerctl pause
-
-
-gaps inner 10
-gaps outer 0
+# vim:filetype=i3

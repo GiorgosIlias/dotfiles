@@ -9,7 +9,7 @@
 
 [colors]
 ;background = ${xrdb:color0}
-background = #501d1f21
+background = #001d1f21
 background-alt = #10ffffff
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -22,8 +22,8 @@ alert = #bd2c40
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 32
-;offset-x = 1%
-;offset-y = 1%
+;offset-x = 4%
+;offset-y = 4%
 radius = 0
 fixed-center = true
 
@@ -36,18 +36,18 @@ line-color = #a54242
 border-size = 5
 border-color = #00000000
 
-padding-left = 5
-padding-right = 5
+padding-left = 3
+padding-right = 3
 
-module-margin-left = 3
-module-margin-right = 3
+module-margin-left = 2
+module-margin-right = 0
 
 font-0 = roboto:pixelsize=12:antialias=true
 ;font-0 = monaco:pixelsize = 5
 font-1 = fontawesome:pixelsize=12:antialias=true
 ;font-2 = siji:pixelsize=10;1
 
-modules-left = musicXD
+modules-left = musicICON musicXD
 modules-center = i3
 modules-right = date
 
@@ -152,7 +152,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = %{T1}%{T-} <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
 icon-prev = 
 icon-stop = 
@@ -244,9 +244,9 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%{T1}%{T-} %A, %d de %B %Y"
 
-time = %H:%M
+time = %{T1}%{T-} %I:%M %p
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -362,6 +362,9 @@ type = custom/script
 exec = ~/.config/polybar/music.sh
 interval = 5
 
+[module/musicICON]
+type = custom/text
+content =%{T1}
 
 
 [settings]
