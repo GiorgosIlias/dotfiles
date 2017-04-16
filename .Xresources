@@ -35,12 +35,10 @@ URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
-
-URxvt.font:xft:Dejavu Sans Mono:pixelsize=14
-!URxvt.letterSpace: -2
+URxvt.font:xft:Source Code Pro:pixelsize=14
 *internalBorder: 25
 
 
 *antialias:  true
-*autohint:   false
+*autohint:   true
 
