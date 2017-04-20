@@ -68,6 +68,7 @@ bindsym XF86AudioPlay		exec --no-startup-id ~/.config/i3/play.sh
 bindsym XF86AudioNext		exec --no-startup-id ~/.config/i3/next.sh
 bindsym XF86AudioPrev		exec --no-startup-id ~/.config/i3/prev.sh
 bindsym $mod+Delete		exec --no-startup-id ~/.config/i3/lock.sh
+bindsym $mod+Shift+Delete	exec --no-startup-id ~/.config/i3/bsod.sh
 bindsym $mod+F7			exec --no-startup-id mpc pause; exec --no-startup-id playerctl pause
 bindsym $mod+Print		exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
 bindsym $mod+Shift+Print	exec --no-startup-id scrot -u -e 'mv $f ~/Pictures/'
