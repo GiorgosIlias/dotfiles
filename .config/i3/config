@@ -36,7 +36,7 @@ exec --no-startup-id dunst
 exec --no-startup-id xfce4-panel
 exec --no-startup-id mpd
 # exec --no-startup-id mpv --really-quiet --no-video ~/.config/i3/xpsound.mp3
-exec --no-startup-id discord
+# exec --no-startup-id discord
 
 
 
