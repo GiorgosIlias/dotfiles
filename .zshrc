@@ -5,9 +5,11 @@ alias monstercat='streamlink -Q -p mpv twitch.tv/monstercat best'
 alias mfm='monstercat & disown'
 alias apaga='sudo shutdown now'
 alias gksu='gksu-polkit'
+alias pene='ls -R /'
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export SUDO_EDITOR="$VISUAL"
 
 PS1='%F{yellow}%B%n%b %F{blue}%v%3~ %F{magenta}»%f '
 RPS1='%F{white}%t%f'
