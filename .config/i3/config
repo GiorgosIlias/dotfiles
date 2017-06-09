@@ -15,7 +15,7 @@ for_window [class="GParted"] floating enable
 for_window [class="Pamac-updater"] floating enable
 for_window [class="Xfce4-panel"] floating enable
 for_window [class="feh"] floating enable
-for_window [class="TmForever.exe"] floating enable
+# for_window [class="TmForever.exe"] floating enable
 
 for_window [urgent=lastest] focus 
 
