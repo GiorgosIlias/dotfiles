@@ -1,0 +1,62 @@
+body {
+ color: #C5C8C6;
+ background-color: #2B2B2B
+}
+
+img.img_izq {
+   bottom:-90px;
+   left:-100px
+}
+
+img.img_dcha {
+  bottom:-90px;
+  right:-400px;
+}
+
+*:focus {
+    outline: none;
+}
+
+#columna1, #columna2, #columna3 {
+    display:inline-block;
+}
+
+p.subtitulo {
+  font-size: 45px;
+  font-family:LightNovel;
+
+}
+
+a:link {
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#aeb2b0 ;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+@font-face {
+  font-family: "LightNovel";
+  src: url(fonts/lightnovel.otf);
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(fonts/Roboto-Regular.ttf);
+}
