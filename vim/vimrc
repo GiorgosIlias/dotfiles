@@ -1,6 +1,7 @@
 set directory=$HOME/.vim/swap//
 set backupdir=$HOME/.vim/backup//
 map <F5> :w <CR> :!gfortran % -o %<.o && ./%<.o <CR>
+highlight LineNr ctermfg=grey
 
 let fortran_free_source=1
 let fortran_do_enddo=1

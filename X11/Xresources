@@ -1,6 +1,6 @@
 ! special colors
 *.foreground:  #c5c8c6
-*.background:  #1d1f21
+*.background:  #111111
 *.cursorColor:  #c5c8c6
 ! black
 *.color0:      #282a2e
@@ -25,19 +25,23 @@
 *.color14:     #8abeb7
 ! white
 *.color7:      #707880
-*.color15:     #c5c8c6
+*.color15: #c5c8c6
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
-URxvt.font: xft:Iosevka:size=11
-URxvt.letterSpace: 0
+!URxvt.font: -*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*
+!URxvt.boldFont: -*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*
+URxvt.font: xft:Iosevka:size=12
+URxvt.boldFont: xft:Iosevka:size=12
+URxvt.letterSpace: true
 URxvt.internalBorder: 20
 
-*antialias:  true
+*antialias:  false
 *autohint:   true
 
 rofi.terminal: urxvt
 rofi.fullscreen: false
+

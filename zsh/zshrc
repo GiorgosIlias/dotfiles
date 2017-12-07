@@ -14,7 +14,7 @@ HISTFILE=~/.zsh/hist
 HISTSIZE=25
 SAVEHIST=100
 # End of lines configured by zsh-newuser-install
-PS1='%F{yellow}%B%n%b %F{blue}%v%3~ %F{magenta}»%f '
+PS1='%F{white}%v%2~ %F{red}λ%f '
 # RPS1='%F{white}%t%f'
 alias cdc='cd ~-'
 alias ls='ls --color=auto'
