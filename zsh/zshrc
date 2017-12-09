@@ -14,7 +14,8 @@ HISTFILE=~/.zsh/hist
 HISTSIZE=25
 SAVEHIST=100
 # End of lines configured by zsh-newuser-install
-PS1='%F{white}%v%2~ %F{red}λ%f '
+# PS1='%F{white}%v%2~ %F{red}λ%f '
+PS1='%F{white}%v%2~ %F{red}>%f '
 # RPS1='%F{white}%t%f'
 alias cdc='cd ~-'
 alias ls='ls --color=auto'
@@ -24,6 +25,9 @@ export DISPLAY=:0.0
 alias upm='cd ~/d/UPM/INFORMATICA'
 alias rofi='rofi -modi drun -show drun'
 alias adb='adb.exe'
+alias cmd='cmd.exe'
+alias powershell='powershell.exe'
+alias xmerge='xrdb -merge $HOME/.Xresources'
 function mkfortran {
   echo "program $1\nimplicit none\n\nend program $1" >> $1.f95
 }

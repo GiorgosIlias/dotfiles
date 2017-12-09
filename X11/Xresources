@@ -28,20 +28,19 @@
 *.color15: #c5c8c6
 
 URxvt*scrollBar:         false
-URxvt*scrollBar_right:   false
+! URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
 !URxvt.font: -*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*
 !URxvt.boldFont: -*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*
-URxvt.font: xft:Iosevka:size=12
-URxvt.boldFont: xft:Iosevka:size=12
-URxvt.letterSpace: true
+URxvt.font: xft:iosevka:size=13
+URxvt.boldFont: xft:iosevka:size=13
+URxvt.letterSpace: -1
 URxvt.internalBorder: 20
 
-*antialias:  false
-*autohint:   true
+*antialias:  true
+!*autohint:   true
 
 rofi.terminal: urxvt
 rofi.fullscreen: false
-
