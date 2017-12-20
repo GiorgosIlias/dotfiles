@@ -26,11 +26,8 @@ alias upm='cd ~/d/UPM/INFORMATICA'
 alias rofi='rofi -modi drun -show drun'
 alias adb='adb.exe'
 alias cmd='cmd.exe'
-alias powershell='powershell.exe'
-alias xmerge='xrdb -merge $HOME/.Xresources'
-function mkfortran {
-  echo "program $1\nimplicit none\n\nend program $1" >> $1.f95
-}
+# alias xmerge='xrdb -merge $HOME/.Xresources'
+# alias ccat='pygmentize -g -O style=colorful, linenos=1'
 function gf {
   gfortran $1.f95 -o $1.o
   ./$1.o
