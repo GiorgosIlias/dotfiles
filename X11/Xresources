@@ -34,8 +34,8 @@ URxvt*transparent:       false
 
 !URxvt.font: -*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*
 !URxvt.boldFont: -*-terminus-medium-r-*-*-*-*-*-*-*-*-*-*
-URxvt.font: xft:iosevka:size=13
-URxvt.boldFont: xft:iosevka:size=13
+URxvt.font: xft:monaco:size=12
+!URxvt.boldFont: xft:monaco:size=13
 URxvt.letterSpace: -1
 URxvt.internalBorder: 20
 

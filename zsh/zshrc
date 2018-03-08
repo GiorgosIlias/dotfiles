@@ -14,9 +14,12 @@ HISTFILE=~/.zsh/hist
 HISTSIZE=25
 SAVEHIST=100
 # End of lines configured by zsh-newuser-install
-# PS1='%F{white}%v%2~ %F{red}λ%f '
-PS1='%F{white}%v%2~ %F{red}>%f '
-# RPS1='%F{white}%t%f'
+GIT_PROMPT_EXECUTABLE="haskell"
+source /home/viper/zsh-git-prompt/zshrc.sh
+PS1='%F{green}%~
+%F{red}♥%f '
+RPS1='%F{white}%t%f'
+# PROMPT='%B%m%~%b$(git_super_status) %# '
 alias cdc='cd ~-'
 alias ls='ls --color=auto'
 LS_COLORS=$LS_COLORS:'ow=1;34:'; export LS_COLORS
@@ -32,3 +35,9 @@ function gf {
   gfortran $1.f95 -o $1.o
   ./$1.o
 }
+function makerun {
+  make all
+  ./run.out
+}
+
+export LANG=es_ES.UTF-8
