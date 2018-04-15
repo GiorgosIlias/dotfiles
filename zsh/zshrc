@@ -14,8 +14,6 @@ HISTFILE=~/.zsh/hist
 HISTSIZE=25
 SAVEHIST=100
 # End of lines configured by zsh-newuser-install
-GIT_PROMPT_EXECUTABLE="haskell"
-source /home/viper/zsh-git-prompt/zshrc.sh
 PS1='%F{green}%~
 %F{red}♥%f '
 RPS1='%F{white}%t%f'
@@ -25,19 +23,10 @@ alias ls='ls --color=auto'
 LS_COLORS=$LS_COLORS:'ow=1;34:'; export LS_COLORS
 alias tree='tree -C'
 export DISPLAY=:0.0
-alias upm='cd ~/d/UPM/INFORMATICA'
-alias rofi='rofi -modi drun -show drun'
 alias adb='adb.exe'
 alias cmd='cmd.exe'
 # alias xmerge='xrdb -merge $HOME/.Xresources'
 # alias ccat='pygmentize -g -O style=colorful, linenos=1'
-function gf {
-  gfortran $1.f95 -o $1.o
-  ./$1.o
-}
-function makerun {
-  make all
-  ./run.out
-}
 
 export LANG=es_ES.UTF-8
+export PATH=/opt/anaconda/bin:$PATH
