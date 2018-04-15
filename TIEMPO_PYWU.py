@@ -104,7 +104,7 @@ elif mov > 0:
 else:
     pass
 
-with open("pos", "w") as archivo:
+with open("/home/pi/.pos", "w") as archivo:
     archivo.write("{}".format(pos_requerida))
 
 GPIO.cleanup()
