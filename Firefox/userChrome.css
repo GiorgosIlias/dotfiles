@@ -1,0 +1,211 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+toolbarbutton#alltabs-button {
+	-moz-binding: url("userChrome.xml#js");
+}
+
+:root:-moz-lwtheme-brighttext {                                      /* minor color changes to the default dark theme */
+  --color-overflow: #222;                                            /* >> button color */
+  --chrome-background-color: #111 !important;                        /* tab strip background & inactive tabs */
+  --chrome-secondary-background-color: #222 !important;              /* nav bar & active tab */
+  --chrome-color: #ccc !important;                                   /* url & tab text, close tab & new tab buttons */
+  background-color: #444 !important;                                 /* top border of out of focus window */
+}
+
+:root:-moz-lwtheme-darktext {                                        /* minor changes to the default light theme */
+  --color-overflow: #ddd;                                            /* >> button color */
+  --chrome-background-color: #ccc !important;                        /* tab strip background & inactive tabs */
+}
+
+:root {
+  --tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
+  --toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
+  --chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
+}
+
+/* Move Tab-bar beside Nav-bar */
+#TabsToolbar {      
+  margin-bottom: 0px !important;                /* not needed anymore? */
+  margin-top: 0px !important;                   /*  */
+  margin-left: 35vw !important;
+  margin-right: -34px !important;
+  max-height: 32px !important;
+}
+
+#nav-bar {      
+  margin-bottom: -1px !important;               /* remove navbar bottom 1px border */
+  margin-top: -32px !important;
+  margin-right: 65vw !important; 
+  border: none !important;
+}   
+
+/* Remove padding above tabbar in compact mode */
+#main-window[sizemode="normal"] > #titlebar {
+  -moz-appearance: initial !important;
+}
+
+
+/* Back & Forward buttons */  
+#back-button > .toolbarbutton-icon,
+#forward-button > .toolbarbutton-icon {
+  transform: scale(0.9, 0.9) !important;
+  margin-left: -2px !important;
+  margin-right: -2px !important; 
+}
+
+/* Move hamburger menu to the left */
+#PanelUI-button,
+#customization-panel-container,
+#customization-panelWrapper .panel-arrow { 
+  -moz-box-ordinal-group: 0 !important;
+  margin-right: -6px !important;
+}
+
+#appMenu-popup {
+  margin-right: -258px !important;
+}
+
+#appMenu-popup .panel-arrow {
+  margin-right: 248px !important;
+}
+
+/* More tools... button */
+#nav-bar-overflow-button { 
+  transform: scale(0.9, 0.9) !important;
+  fill: var(--color-overflow) !important;
+}  
+
+
+/* Tabs */
+.tabbrowser-tab {
+  height: 32px !important; 
+}
+
+/* Remove empty space before first tab
+Delete this rule if you need a space to drag the window*/
+#TabsToolbar .titlebar-placeholder[type="pre-tabs"]{
+    display: none !important;
+}
+
+/* Remove border between tabs
+Delete this rule if you want separators between background tabs 
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  border-left: none !important;
+} */
+
+/* Border between background tabs */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  color: grey !important; 
+  opacity: .2 !important; 
+ }
+
+/* New tab button color */
+#new-tab-button, .tabs-newtab-button {
+  fill: var(--chrome-color) !important;
+  } 
+
+/* tab line - adjust color & size, default #0a84ff 2px */
+.tab-line {
+  background-color: #0a84ff !important;
+  height: 0px !important;
+  }
+
+
+/* Hide various elements */
+/* Menu */
+#appMenu-fxa-container,                    /* Sign in to Sync */
+#appMenu-fxa-container+toolbarseparator,
+/* #appMenuRestoreLastSession, */
+#appMenu-zoom-controls,
+#appMenu-zoom-controls+toolbarseparator,
+#appMenu-edit-controls,
+#appMenu-edit-controls+toolbarseparator,
+#appMenu-library-button,
+#appMenu-customize-button,
+#appMenu-customize-button+toolbarseparator,
+#appMenu-open-file-button,
+#appMenu-save-file-button,
+#appMenu-find-button,
+#appMenu-more-button,
+
+
+
+#identity-box,
+#dropmarker-icon,
+#historydropmarker,
+#autocomplete-history-dropmarker,
+#urlbar-history-dropmarker,
+#dropmarker,
+#autocomplete-history-dropmarker,
+#urlbar-history-dropmarker,
+#urlbar-reload-button,
+#urlbar-zoom-button,
+#plugins-notification-icon,
+#notification-anchor-icon,
+#notification-popup-box,
+.scrollbutton-up,
+.scrollbutton-down,
+#alltabs-button,
+.autocomplete-history-dropmarker.urlbar-history-dropmarker,
+.toolbarbutton-menubutton-dropmarker,
+#memfx-toolbar-button, 
+#reload-button, 
+.box-inherit.toolbarbutton-menubutton-button, 
+.scrollbutton-up,
+.scrollbutton-down, 
+
+
+
+
+/* URL Bar */
+#pageActionButton,
+#pocket-button-box,
+#ar-button,
+.autocomplete-history-dropmarker,
+#identity-icon-labels
+{
+    display: none !important;
+}
+#page-action-buttons { 
+  /*** ICONS AND BUTTONS ***/
+  display: none !important;
+}
+#dropmarker-icon,
+
+
+
+
+/* Custom bindings.xml in same folder as userChrome, for simple URL */
+#urlbar {
+	-moz-binding: url("bindings.xml#urlbar") !important;
+}
+/* Center URL */
+#urlbar .urlbar-input-box {
+	text-align: center;
+  margin-bottom: 1px;
+  box-shadow: none !important;
+}
+
+#TabsToolbar .close-icon {
+  display: none !important;
+}
+
+/* Unhide the tab close button on hover when it is the selected tab and not pinned */
+#TabsToolbar .tabbrowser-tab:hover .close-icon {
+  display: inline-block !important;
+}
+
+#urlbar {
+  /*** URLBAR ***/
+  background: #f2f2f2 !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: rgb(0, 0, 0) !important;
+  
+  -family: "Roboto" !important;
+font-weight: normal !important;
+}
+
+
+/* Make Toolbar Buttons Grayscale */
+.toolbarbutton-1 {filter: grayscale(100%) !important;}
