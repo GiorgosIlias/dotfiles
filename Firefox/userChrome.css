@@ -16,7 +16,7 @@ toolbarbutton#alltabs-button {
   --color-overflow: #222;                                          /* >> button color */
   --chrome-background-color: #111 !important;                      /* tab strip background & inactive tabs */
   --chrome-secondary-background-color: #222 !important;            /* nav bar & active tab */
-  --chrome-color: #ccc !important;                                 /* url & tab text, close tab & new tab buttons */
+  --chrome-color: rgb(136, 136, 136) !important;                                 /* url & tab text, close tab & new tab buttons */
   background-color: #444 !important;                               /* top border of out of focus window */
 }
 
@@ -194,10 +194,10 @@ Delete this rule if you need a space to drag the window*/
   /* No full url */
   -moz-binding: url("bindings.xml#urlbar") !important;
   /* Style */
-  background: #f2f2f2 !important;
+  background: #e5e8ea !important;
   border: none !important;
   box-shadow: none !important;
-  color: rgb(0, 0, 0) !important;
+
   
   -family: "Roboto" !important;
   font-weight: normal !important;
