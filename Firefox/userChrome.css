@@ -1,15 +1,23 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* #################
+WINDOWS UWP DRAG BAR
+################# */
 toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");
 }
 
+
+/* #################
+- - - COLORS 
+################# */
+
 :root:-moz-lwtheme-brighttext {                                      /* minor color changes to the default dark theme */
-  --color-overflow: #222;                                            /* >> button color */
-  --chrome-background-color: #111 !important;                        /* tab strip background & inactive tabs */
-  --chrome-secondary-background-color: #222 !important;              /* nav bar & active tab */
-  --chrome-color: #ccc !important;                                   /* url & tab text, close tab & new tab buttons */
-  background-color: #444 !important;                                 /* top border of out of focus window */
+  --color-overflow: #222;                                          /* >> button color */
+  --chrome-background-color: #111 !important;                      /* tab strip background & inactive tabs */
+  --chrome-secondary-background-color: #222 !important;            /* nav bar & active tab */
+  --chrome-color: #ccc !important;                                 /* url & tab text, close tab & new tab buttons */
+  background-color: #444 !important;                               /* top border of out of focus window */
 }
 
 :root:-moz-lwtheme-darktext {                                        /* minor changes to the default light theme */
@@ -22,6 +30,37 @@ toolbarbutton#alltabs-button {
   --toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
   --chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
 }
+
+/* Remove border between tabs
+Delete this rule if you want separators between background tabs 
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  border-left: none !important;
+} */
+
+/* Border between background tabs */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+  color: grey !important; 
+  opacity: .2 !important; 
+}
+
+/* New tab button color */
+#new-tab-button, .tabs-newtab-button {
+  fill: var(--chrome-color) !important;
+} 
+
+/* tab line - adjust color & size, default #0a84ff 2px */
+.tab-line {
+  background-color: #0a84ff !important;
+  height: 0px !important;
+}
+/* Make Toolbar Buttons Grayscale */
+.toolbarbutton-1 {filter: grayscale(100%) !important;}
+
+
+
+/* #################
+- TOP TABS LOCATION
+################# */
 
 /* Move Tab-bar beside Nav-bar */
 #TabsToolbar {      
@@ -43,7 +82,6 @@ toolbarbutton#alltabs-button {
 #main-window[sizemode="normal"] > #titlebar {
   -moz-appearance: initial !important;
 }
-
 
 /* Back & Forward buttons */  
 #back-button > .toolbarbutton-icon,
@@ -75,7 +113,6 @@ toolbarbutton#alltabs-button {
   fill: var(--color-overflow) !important;
 }  
 
-
 /* Tabs */
 .tabbrowser-tab {
   height: 32px !important; 
@@ -87,33 +124,13 @@ Delete this rule if you need a space to drag the window*/
     display: none !important;
 }
 
-/* Remove border between tabs
-Delete this rule if you want separators between background tabs 
-.tabbrowser-tab::after, .tabbrowser-tab::before {
-  border-left: none !important;
-} */
-
-/* Border between background tabs */
-.tabbrowser-tab::after, .tabbrowser-tab::before {
-  color: grey !important; 
-  opacity: .2 !important; 
- }
-
-/* New tab button color */
-#new-tab-button, .tabs-newtab-button {
-  fill: var(--chrome-color) !important;
-  } 
-
-/* tab line - adjust color & size, default #0a84ff 2px */
-.tab-line {
-  background-color: #0a84ff !important;
-  height: 0px !important;
-  }
 
 
-/* Hide various elements */
+/* #################
+- - HIDE STUFF
+################# */
 /* Menu */
-#appMenu-fxa-container,                    /* Sign in to Sync */
+#appMenu-fxa-container,
 #appMenu-fxa-container+toolbarseparator,
 /* #appMenuRestoreLastSession, */
 #appMenu-zoom-controls,
@@ -127,8 +144,6 @@ Delete this rule if you want separators between background tabs
 #appMenu-save-file-button,
 #appMenu-find-button,
 #appMenu-more-button,
-
-
 
 #identity-box,
 #dropmarker-icon,
@@ -154,9 +169,6 @@ Delete this rule if you want separators between background tabs
 .scrollbutton-up,
 .scrollbutton-down, 
 
-
-
-
 /* URL Bar */
 #pageActionButton,
 #pocket-button-box,
@@ -174,38 +186,40 @@ Delete this rule if you want separators between background tabs
 
 
 
-
-/* Custom bindings.xml in same folder as userChrome, for simple URL */
-#urlbar {
-	-moz-binding: url("bindings.xml#urlbar") !important;
-}
-/* Center URL */
-#urlbar .urlbar-input-box {
-	text-align: center;
-  margin-bottom: 1px;
-  box-shadow: none !important;
-}
-
-#TabsToolbar .close-icon {
-  display: none !important;
-}
-
-/* Unhide the tab close button on hover when it is the selected tab and not pinned */
-#TabsToolbar .tabbrowser-tab:hover .close-icon {
-  display: inline-block !important;
-}
+/* #################
+- - - URL BAR
+################# */
 
 #urlbar {
-  /*** URLBAR ***/
+  /* No full url */
+  -moz-binding: url("bindings.xml#urlbar") !important;
+  /* Style */
   background: #f2f2f2 !important;
   border: none !important;
   box-shadow: none !important;
   color: rgb(0, 0, 0) !important;
   
   -family: "Roboto" !important;
-font-weight: normal !important;
+  font-weight: normal !important;
+}
+/* Center */
+#urlbar .urlbar-input-box {
+	text-align: center;
+  margin-bottom: 1px;
+  box-shadow: none !important;
 }
 
 
-/* Make Toolbar Buttons Grayscale */
-.toolbarbutton-1 {filter: grayscale(100%) !important;}
+/* #################
+- - - - TABS
+################# */
+
+#TabsToolbar .close-icon {
+  display: none !important;
+}
+/* Unhide the tab close button on hover */
+#TabsToolbar .tabbrowser-tab:hover .close-icon {
+  display: inline-block !important;
+}
+
+
