@@ -239,7 +239,7 @@ Delete this rule if you need a space to drag the window*/
 ################# */
 
 #TabsToolbar .close-icon {
-  visibility: hidden !important;
+  filter: opacity(40%) !important;
 }
 /* Unhide the tab close button on hover */
 #TabsToolbar .tabbrowser-tab:hover .close-icon {
