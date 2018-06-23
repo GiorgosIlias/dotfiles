@@ -171,7 +171,14 @@ Delete this rule if you need a space to drag the window*/
 #appMenu-find-button,
 #appMenu-more-button,
 
-#identity-box,
+#identity-box {
+    background: var(--url-bg) !important; 
+    color: var(--secondary-text) !important;
+    opacity: 0 !important;
+}
+#identity-box:hover {
+    opacity: 1 !important;    
+}
 #dropmarker-icon,
 #historydropmarker,
 #autocomplete-history-dropmarker,
@@ -221,14 +228,18 @@ Delete this rule if you need a space to drag the window*/
   -moz-binding: url("bindings.xml#urlbar") !important;
   /* Style */
   background: rgb(27, 27, 27) !important;
+  /*background: rgb(228, 5, 5) !important;*/
   border: none !important;
   box-shadow: none !important;
+  /*max-width: 474px !important;*/
 }
 /* Center */
 #urlbar .urlbar-input-box {
 	text-align: center;
   margin-bottom: 1px;
+  /*margin-left: -53px !important;*/
   box-shadow: none !important;
+  padding-right: 24px;
 }
 
 
