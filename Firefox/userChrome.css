@@ -50,11 +50,11 @@ toolbarbutton#alltabs-button {
   /*display: none !important;*/
 }
 
-/* Remove border between tabs
-Delete this rule if you want separators between background tabs 
+/*Remove border between tabs
+Delete this rule if you want separators between background tabs*/
 .tabbrowser-tab::after, .tabbrowser-tab::before {
   border-left: none !important;
-} */
+}
 
 /* Border between background tabs */
 .tabbrowser-tab::after, .tabbrowser-tab::before {
@@ -62,10 +62,7 @@ Delete this rule if you want separators between background tabs
   opacity: 1 !important; 
 }
 
-/* New tab button color */
-#new-tab-button, .tabs-newtab-button {
-  fill: var(--chrome-color) !important;
-} 
+
 
 /* tab line - adjust color & size, default #0a84ff 2px */
 .tab-line {
@@ -75,6 +72,11 @@ Delete this rule if you want separators between background tabs
 /* Make Toolbar Buttons Grayscale */
 .toolbarbutton-1 {
   filter: grayscale(100%) brightness(1000%) invert(10%) !important;
+}
+/* New tab button color */
+#new-tab-button, .tabs-newtab-button {
+  list-style-image: url("newtab.png") !important;
+  -moz-image-region: auto !important;
 }
 
 
@@ -221,10 +223,6 @@ Delete this rule if you need a space to drag the window*/
   background: rgb(27, 27, 27) !important;
   border: none !important;
   box-shadow: none !important;
-
-  
-  -family: "Roboto" !important;
-  font-weight: normal !important;
 }
 /* Center */
 #urlbar .urlbar-input-box {
@@ -239,26 +237,23 @@ Delete this rule if you need a space to drag the window*/
 ################# */
 
 #TabsToolbar .close-icon {
-  filter: opacity(40%) !important;
+  filter: opacity(17%) !important;
 }
-/* Unhide the tab close button on hover */
+/* Unhide the tab close button on hover
+#TabsToolbar .close-icon {
+  display: none !important;
+}
 #TabsToolbar .tabbrowser-tab:hover .close-icon {
   visibility: visible !important;
 }
+*/
 
 /* center text */
 .tab-text {
   text-align: center !important;
 }
-
 .tab-label {
   -moz-box-flex: 1 !important; 
   text-align: center !important;
 }
 
-
-                   /* fix white bg when opening new tabs -- to fix*/
-browser, browser.display.background_color, tabbrowser tabpanels, .browserStack > browser, .browserStack { 
-  background: var(--chrome-background-color) !important; 
-  background-color: var(--chrome-background-color) !important; 
-}
