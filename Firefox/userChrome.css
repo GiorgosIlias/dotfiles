@@ -306,8 +306,8 @@ Delete this rule if you need a space to drag the window*/
   }
   /* Set drop-down width */
   #PopupAutoCompleteRichResult {
-    width: 700px !important;
-    max-width: 700px !important;
+    width: 500px !important;
+    max-width: 500px !important;
     margin-left: 0 !important;
   }
   #PopupAutoCompleteRichResult .autocomplete-richlistitem:not([actiontype="searchengine"]) .ac-title-text, 
