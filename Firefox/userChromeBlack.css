@@ -28,14 +28,14 @@ toolbarbutton#alltabs-button {
 - - - COLORS 
 ################# */
 
-/* DARK THEME */
-:root:-moz-lwtheme-darktext {                                      /* minor color changes to the default dark theme */
-  /*-color-overflow: rgb(31, 31, 31);                                          /* >> button color */
-  --chrome-background-color: rgb(255, 255, 255) !important;                      /* tab strip background & inactive tabs */
-  --chrome-secondary-background-color: rgb(235, 235, 235) !important;            /* nav bar & active tab */
-  --chrome-color: rgb(87, 87, 87) !important;                                 /* url & tab text, close tab & new tab buttons */
-  --background-color: rgb(221, 17, 17) !important;                               /* top border of out of focus window */
+:root:-moz-lwtheme-brighttext {                                      /* minor color changes to the default dark theme */
+  --color-overflow: #111;                                          /* >> button color */
+  --chrome-background-color: #111 !important;                      /* tab strip background & inactive tabs */
+  --chrome-secondary-background-color: rgb(27, 27, 27) !important;            /* nav bar & active tab */
+  --chrome-color: rgb(136, 136, 136) !important;                                 /* url & tab text, close tab & new tab buttons */
+  --background-color: #444 !important;                               /* top border of out of focus window */
 }
+
 
 :root {
   --tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
@@ -46,7 +46,7 @@ toolbarbutton#alltabs-button {
 /* FAVICONS */
 .tabbrowser-tab:not([pinned]) .tab-icon-image
 {
-  filter: grayscale(100%) opacity(100%) !important;
+  filter: grayscale(100%) opacity(50%) !important;
   /*display: none !important;*/
 }
 
@@ -71,7 +71,7 @@ Delete this rule if you want separators between background tabs*/
 }
 /* Make Toolbar Buttons Grayscale */
 .toolbarbutton-1 {
-  filter: grayscale(100%) brightness(1000%) invert(40%) !important;
+  filter: grayscale(100%) brightness(1000%) invert(10%) !important;
 }
 /* New tab button color */
 #new-tab-button, .tabs-newtab-button {
@@ -227,7 +227,7 @@ Delete this rule if you need a space to drag the window*/
   /* No full url */
   /* -moz-binding: url("bindings.xml#urlbar") !important; */
   /* Style */
-  background: rgb(235, 235, 235) !important;
+  background: rgb(27, 27, 27) !important;
   /*background: rgb(228, 5, 5) !important;*/
   border: none !important;
   box-shadow: none !important;
@@ -235,8 +235,7 @@ Delete this rule if you need a space to drag the window*/
 }
 /* Center */
 #urlbar .urlbar-input-box {
-  text-align: center;
-  -webkit-text-fill-color: rgb(87, 87, 87);
+	text-align: center;
   margin-bottom: 1px;
   /*margin-left: -53px !important;*/
   box-shadow: none !important;
@@ -249,7 +248,7 @@ Delete this rule if you need a space to drag the window*/
 ################# */
 
 #TabsToolbar .close-icon {
-  filter: opacity(100%) !important;
+  filter: opacity(17%) !important;
 }
 /* Unhide the tab close button on hover
 #TabsToolbar .close-icon {
