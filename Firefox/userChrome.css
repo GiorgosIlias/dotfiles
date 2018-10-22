@@ -46,7 +46,7 @@ toolbarbutton#alltabs-button {
 /* FAVICONS */
 .tabbrowser-tab:not([pinned]) .tab-icon-image
 {
-  filter: grayscale(100%) opacity(100%) !important;
+  filter: grayscale(100%) opacity(90%) !important;
   /*display: none !important;*/
 }
 
@@ -59,19 +59,18 @@ Delete this rule if you want separators between background tabs*/
 /* Border between background tabs */
 .tabbrowser-tab::after, .tabbrowser-tab::before {
   color: #111 !important; 
-  opacity: 1 !important; 
+  opacity: 0% !important; 
 }
 
 
 
 /* tab line - adjust color & size, default #0a84ff 2px */
 .tab-line {
-  background-color: #0a84ff !important;
-  height: 0px !important;
+  display: none;
 }
 /* Make Toolbar Buttons Grayscale */
 .toolbarbutton-1 {
-  filter: grayscale(100%) brightness(1000%) invert(40%) !important;
+  filter: grayscale(100%) brightness(1000%) invert(70%) !important;
 }
 /* New tab button color */
 #new-tab-button, .tabs-newtab-button {
@@ -249,7 +248,7 @@ Delete this rule if you need a space to drag the window*/
 ################# */
 
 #TabsToolbar .close-icon {
-  filter: opacity(100%) !important;
+  filter: opacity(30%) !important;
 }
 /* Unhide the tab close button on hover
 #TabsToolbar .close-icon {
