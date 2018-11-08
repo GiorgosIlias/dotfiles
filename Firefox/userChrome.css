@@ -28,14 +28,14 @@ toolbarbutton#alltabs-button {
 - - - COLORS
 ################# */
   /*var(--tab-bg)*/
-  --alt-bg: #333 !important;          /* tab bg (selected) */
+  --alt-bg: #222 !important;          /* tab bg (selected) */
   
   --url-bg: #222 !important;          /* nav bar/url section */
   --browser-bg: #191919 !important;   /* tabs (unselected) + background */
 
   --main-text: #999 !important;       /* tab text */
-  --secondary-text: #ccc !important;  /* selected tab text*/
-  --third-text: #888 !important;      /* url bar text*/
+  --secondary-text: #aaa !important;  /* selected tab text*/
+  --third-text: #ccc !important;      /* url bar text*/
 
   --debug-color: rgb(255, 0, 0) !important;
 
