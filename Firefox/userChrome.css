@@ -294,7 +294,64 @@ Delete this rule if you need a space to drag the window*/
 }
 
 
+/* #################
+- - CLOSE BUTTONS
+################# */
 
+/* #titlebar-buttonbox:-moz-window-inactive > * {
+  list-style-image: url(buttons/nofocus.png) !important;
+ } */
+ 
+ #titlebar-min {
+ padding: 0px  !important;
+     padding-left:  0px !important;
+     padding-right: 26px !important;
+     margin-left: 0px !important;
+     margin-right: 0px !important;
+     margin-top: 0px  !important;
+     margin-bottom: 0px  !important;
+     background-color: transparent !important;
+   list-style-image: url(buttons/minus_WAIT.png) !important;
+   transform: scale(0.8) !important;
+ }
+ 
+ #titlebar-min:hover {
+     list-style-image: url(buttons/minus_FULL.png) !important;
+ }
+ 
+ #titlebar-max {
+ padding: 0px  !important;
+     padding-left:  0px !important;
+     padding-right: 26px !important;
+     margin-left: 0px !important;
+     margin-right: 0px !important;
+     margin-top: 0px  !important;
+     margin-bottom: 0px  !important;
+     background-color: transparent !important;
+   list-style-image: url(buttons/plus_WAIT.png) !important;
+   transform: scale(0.8) !important;
+ }
+ 
+ #titlebar-max:hover {
+     list-style-image: url(buttons/plus_FULL.png) !important;
+ }
+ 
+ #titlebar-close {
+ padding: 0px  !important;
+     padding-left:  0px !important;
+     padding-right: 18px !important;
+     margin-left: 0px !important;
+     margin-right: 0px !important;
+     margin-top: 0px  !important;
+     margin-bottom: 0px  !important;
+     background-color: transparent !important;
+   list-style-image: url(buttons/cross_WAIT.png) !important;
+   transform: scale(0.8) !important;
+ }
+ 
+ #titlebar-close:hover {
+     list-style-image: url(buttons/cross_FULL.png) !important;
+ } 
 
 /* #################
  SEARCH POPOUT MODS
