@@ -33,9 +33,9 @@ toolbarbutton#alltabs-button {
   --url-bg: #222 !important;          /* nav bar/url section */
   --browser-bg: #191919 !important;   /* tabs (unselected) + background */
 
-  --main-text: #999 !important;       /* tab text */
-  --secondary-text: #aaa !important;  /* selected tab text*/
-  --third-text: #ccc !important;      /* url bar text*/
+  --main-text: #888 !important;       /* tab text */
+  --secondary-text: #ccc !important;  /* selected tab text*/
+  --third-text: #ddd !important;      /* url bar text*/
 
   --debug-color: rgb(255, 0, 0) !important;
 
@@ -60,19 +60,17 @@ toolbarbutton#alltabs-button {
 /* Color */
 #nav-bar {
   background: var(--url-bg) !important; /* bg, same as url bar */
+
+  /* Round buttons on hover*/
+  --toolbarbutton-border-radius: 12px !important;
 } 
 
-/* FAVICONS */
-.tabbrowser-tab:not([pinned]) .tab-icon-image
-{
-  filter: grayscale(100%) opacity(90%) !important;
-  /*display: none !important;*/
-}
 
 /* Make Toolbar Buttons Grayscale */
 .toolbarbutton-1 {
   filter: grayscale(100%) brightness(1000%) invert(10%) !important;
 }
+
 
 /* #################
 - - - URL BAR
@@ -83,7 +81,7 @@ toolbarbutton#alltabs-button {
   /* -moz-binding: url("bindings.xml#urlbar") !important; */
 
   /* Color */
-  color: var(--main-text) !important;   /* text */
+  color: var(--third-text) !important;   /* text */
   background: var(--url-bg) !important; /* bg */
   border: none !important;
   box-shadow: none !important;
@@ -129,6 +127,27 @@ toolbarbutton#alltabs-button {
 /* Close tab color */
 #TabsToolbar .close-icon {
   filter: opacity(17%) !important;
+}
+
+/* FAVICONS Color */
+/* Default */
+.tab-icon-image
+{
+  filter: grayscale(100%) opacity(90%) !important;
+  /*display: none !important;*/
+}
+/* Selected */
+.tabbrowser-tab[selected] .tab-icon-image
+{
+  filter: grayscale(50%) opacity(90%) !important;
+  /*display: none !important;*/
+}
+
+/* Pinned */
+.tabbrowser-tab[pinned] .tab-icon-image
+{
+  filter: grayscale(0%) opacity(90%) !important;
+  /*display: none !important;*/
 }
 
 /* Unhide the tab close button on hover
