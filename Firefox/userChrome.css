@@ -37,7 +37,7 @@ toolbarbutton#alltabs-button {
   --secondary-text: #ccc !important;  /* selected tab text*/
   --third-text: #ddd !important;      /* url bar text*/
 
-  --debug-color: rgb(255, 0, 0) !important;
+  --debug-color: rgba(255, 0, 0, 0.5) !important;
 
 
 /* #################
@@ -85,7 +85,7 @@ toolbarbutton#alltabs-button {
   background: var(--url-bg) !important; /* bg */
   border: none !important;
   box-shadow: none !important;
-
+  border-radius: 12px !important;
   /*max-width: 474px !important;*/
 }
 /* Center */
@@ -94,7 +94,87 @@ toolbarbutton#alltabs-button {
   margin-bottom: 1px;
   /*margin-left: -53px !important;*/
   box-shadow: none !important;
-  padding-right: 44px;
+  margin-left: -25px !important;
+  margin-right: 35px !important;
+}
+
+/*
+ * Originally from:
+ * http://forums.mozillazine.org/viewtopic.php?p=14404121#p14404121
+ */
+
+ #urlbar {
+  position: relative;
+  z-index: 1;
+}
+
+#identity-box:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: transparent;
+  opacity: 0.2;
+}
+
+/* uBlock Origin Dashboard */
+#urlbar[pageproxystate='valid'] #identity-box.extensionPage:after {
+  background: #45a1ff; /* Firefox Blue 40 */
+}
+/* https://mixed.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContent:after {
+  background: rgb(255, 136, 0); /* Firefox Yellow 60 */
+}
+/* https://very.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.mixedDisplayContentLoadedActiveBlocked:after {
+  background: rgb(255, 136, 0); /* Firefox Yellow 60 */
+}
+/* https://self-signed.badssl.com/ but add certificate exception */
+#urlbar[pageproxystate='valid'] #identity-box.certUserOverridden:after {
+  background: rgb(255, 136, 0); /* Firefox Yellow 50 */
+}
+/* Don't know an example for this */
+#urlbar[pageproxystate='valid'] #identity-box.weakCipher:after {
+  background: rgb(255, 136, 0); /* Firefox Yellow 70 */
+}
+/* https://mixed-script.badssl.com/ but disable protection */
+#urlbar[pageproxystate='valid'] #identity-box.mixedActiveContent:after {
+  background: #f30323;  /* Firefox Red 60 */
+}
+/* http://http-login.badssl.com/ */
+#urlbar[pageproxystate='valid'] #identity-box.insecureLoginForms:after {
+  background: #f30323;  /* Firefox Red 70 */
+}
+
+#identity-box {
+  background: rgb(255, 0, 0,0) !important; /* REMOVE ALPHA TO DEBUG*/
+  color: rgba(0, 0, 0, 0) !important;
+  width: 70px !important;
+}
+
+/* Unhide when hovering/active */
+#identity-box:hover {
+  color: var(--secondary-text) !important;    
+}
+#identity-box[open="true"] {
+  color: var(--secondary-text) !important;    
+}
+#tracking-protection-icon-animatable-box, #connection-icon
+{
+  opacity: 0 !important;
+}
+#identity-box:hover #tracking-protection-icon-animatable-box, #identity-box[open="true"] #tracking-protection-icon-animatable-box, #identity-box:hover #connection-icon, #identity-box[open="true"] #connection-icon
+{
+  opacity: 100 !important;
+}
+
+#context-stop,#context-reload[hidden="true"] 
+{ 
+  display: none; 
 }
 
 
@@ -205,14 +285,7 @@ toolbarbutton#alltabs-button {
 #appMenu-find-button,
 #appMenu-more-button,
 
-#identity-box {
-    background: var(--url-bg) !important; 
-    color: var(--secondary-text) !important;
-    opacity: 0 !important;
-}
-#identity-box:hover {
-    opacity: 1 !important;    
-}
+
 #dropmarker-icon,
 #historydropmarker,
 #autocomplete-history-dropmarker,
@@ -236,15 +309,15 @@ toolbarbutton#alltabs-button {
 .scrollbutton-up,
 .scrollbutton-down, 
 
+#stop-button,
+
+
 /* URL Bar */
 #pageActionButton,
 #pocket-button-box,
 #ar-button,
 .autocomplete-history-dropmarker,
-#identity-icon-labels
-{
-    display: none !important;
-}
+
 #page-action-buttons { 
   /*** ICONS AND BUTTONS ***/
   display: none !important;
