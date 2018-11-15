@@ -7,7 +7,6 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 zstyle :compinstall filename '/home/ayatsfer/.zshrc'
 
 autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh/hist
@@ -15,18 +14,19 @@ HISTSIZE=25
 SAVEHIST=100
 # End of lines configured by zsh-newuser-install
 PS1='%F{green}%~
-%F{red}♥%f '
+%F{red}λ%f '
 RPS1='%F{white}%t%f'
 # PROMPT='%B%m%~%b$(git_super_status) %# '
-alias cdc='cd ~-'
+# alias cdc='cd ~-'
 alias ls='ls --color=auto'
 LS_COLORS=$LS_COLORS:'ow=1;34:'; export LS_COLORS
 alias tree='tree -C'
 export DISPLAY=:0.0
-alias adb='adb.exe'
-alias cmd='cmd.exe'
+alias ccat='pygmentize -g'
 # alias xmerge='xrdb -merge $HOME/.Xresources'
 # alias ccat='pygmentize -g -O style=colorful, linenos=1'
 
-export LANG=es_ES.UTF-8
-export PATH=/opt/anaconda/bin:$PATH
+PATH=$PATH:/usr/bin/core_perl
+export PATH
+#export LANG=es_ES.UTF-8
+#export PATH=/opt/anaconda/bin:$PATH
