@@ -393,8 +393,9 @@ Delete this rule if you need a space to drag the window*/
 /* #titlebar-buttonbox:-moz-window-inactive > * {
   list-style-image: url(buttons/nofocus.png) !important;
  } */
+
  
- #titlebar-min {
+ .titlebar-min {
   padding: 0px  !important;
   padding-left:  14px !important;
   padding-right: 14px !important;
@@ -409,11 +410,11 @@ Delete this rule if you need a space to drag the window*/
   list-style-image: url(buttons/minus_WAIT.png) !important;
   transform: scale(0.8,0.8) !important;
  }
- #titlebar-min:hover {
+ .titlebar-min:hover {
   list-style-image: url(buttons/minus_FULL.png) !important;
  }
  
- #titlebar-max {
+ .titlebar-max {
   padding: 0px  !important;
   padding-left:  14px !important;
   padding-right: 14px !important;
@@ -427,17 +428,17 @@ Delete this rule if you need a space to drag the window*/
   list-style-image: url(buttons/plus_WAIT.png) !important;
   transform: scale(0.8,0.8) !important;
  }
- #titlebar-max:hover {
+ .titlebar-max:hover {
      list-style-image: url(buttons/plus_FULL.png) !important;
  }
  
- #titlebar-close {
+ .titlebar-close {
   padding: 0px  !important;
   padding-left:  14px !important;
   padding-right: 14px !important;
   
   margin-left: 0px !important;
-  margin-right: -1px !important;
+  margin-right: 33px !important;
   margin-top: 0px  !important;
   margin-bottom: 0px  !important;
 
@@ -445,7 +446,7 @@ Delete this rule if you need a space to drag the window*/
   list-style-image: url(buttons/cross_WAIT.png) !important;
   transform: scale(0.8,0.8) !important;
  }
- #titlebar-close:hover {
+ .titlebar-close:hover {
      list-style-image: url(buttons/cross_FULL.png) !important;
  } 
 
